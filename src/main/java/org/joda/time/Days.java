@@ -132,7 +132,7 @@ public final class Days extends BaseSingleFieldPeriod {
      * @throws IllegalArgumentException if the partials are null or invalid
      */
     public static Days daysBetween(ReadablePartial start, ReadablePartial end) {
-        if (start instanceof LocalDate && end instanceof LocalDate)   {
+        if (!(start instanceof LocalDate) && end instanceof LocalDate)   {
             Chronology chrono = DateTimeUtils.getChronology(start.getChronology());
             int days = chrono.days().getDifference(
                     ((LocalDate) end).getLocalMillis(), ((LocalDate) start).getLocalMillis());
