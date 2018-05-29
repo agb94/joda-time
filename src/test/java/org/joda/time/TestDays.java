@@ -106,6 +106,7 @@ public class TestDays extends TestCase {
         assertEquals(0, Days.daysBetween(end1, end1).getDays());
         assertEquals(-3, Days.daysBetween(end1, start).getDays());
         assertEquals(6, Days.daysBetween(start, end2).getDays());
+        assertEquals(-6, Days.daysBetween(end2, start).getDays());
     }
 
     public void testFactory_daysBetween_RPartial_YearMonth() {
@@ -120,7 +121,7 @@ public class TestDays extends TestCase {
         assertEquals(-59, Days.daysBetween(end1, start1).getDays());
         assertEquals(-60, Days.daysBetween(end2, start2).getDays());
     }
-
+    
     public void testFactory_daysBetween_RPartial_MonthDay() {
         MonthDay start1 = new MonthDay(2, 1);
         MonthDay start2 = new MonthDay(2, 28);
